@@ -1,0 +1,24 @@
+<form [formGroup]="step1">
+
+  <mat-form-field>
+    <input matInput placeholder="Address Line 1" formControlName="line1" required>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field>
+    <input matInput placeholder="Address Line 2" formControlName="line2" required>
+  </mat-form-field>
+
+  <br>
+
+  <app-text-input (outputText)="change($event)"></app-text-input>
+
+  <!-- " -->
+
+  <div>
+    <button class="button-spacing" mat-stroked-button matStepperNext disabled>Back</button>
+
+    <button mat-raised-button matStepperNext color="primary">Next</button>
+  </div>
+</form>

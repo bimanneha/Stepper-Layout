@@ -1,0 +1,45 @@
+<mat-horizontal-stepper labelPosition="bottom" [linear]="isLinear" #stepper>
+
+  <ng-template matStepperIcon="edit">
+    <mat-icon>check</mat-icon>
+  </ng-template>
+
+  <mat-step [stepControl]="stepOne">
+    <ng-template matStepLabel>Address</ng-template>
+    <app-step-one></app-step-one>
+  </mat-step>
+
+  <mat-step [stepControl]="stepTwo">
+    <ng-template matStepLabel>Payment</ng-template>
+    <app-step-two></app-step-two>
+  </mat-step>
+
+  <mat-step [stepControl]="stepThree">
+    <ng-template matStepLabel>Review</ng-template>
+    <app-step-three></app-step-three>
+  </mat-step>
+
+  <mat-step [stepControl]="stepFour">
+    <ng-template matStepLabel>Done</ng-template>
+    <app-step-four></app-step-four>
+  </mat-step>
+
+  <!--<mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>-->
+
+</mat-horizontal-stepper>
+
+<div class="diagnostics">
+  {{this.formService.mainForm.value | json}}
+  <!-- <div *ngFor="let key of keys()">
+    <span *ngIf="myForm[key]">
+      <b>{{key}}</b>: {{myForm[key]}}
+    </span>
+  </div> -->
+</div>

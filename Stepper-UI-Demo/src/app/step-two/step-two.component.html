@@ -1,0 +1,13 @@
+<form [formGroup]="step2">
+
+  <mat-form-field>
+    <input matInput placeholder="Payment" formControlName="payment" required>
+  </mat-form-field>
+
+  <!-- {{stepTwo.value.address}} -->
+  <div>
+    <button class="button-spacing" mat-stroked-button matStepperPrevious color="primary">Back</button>
+
+    <button mat-raised-button matStepperNext color="primary">Next</button>
+  </div>
+</form>
