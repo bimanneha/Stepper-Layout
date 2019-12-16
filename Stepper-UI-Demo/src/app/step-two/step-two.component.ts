@@ -122,7 +122,7 @@ export class StepTwoComponent implements AfterViewInit {
 
   makePayment(data) {
     this.encryptedPaymentData = data.paymentMethod;
-
+    this.dataReceived.emit(this.encryptedPaymentData);
     // Dummy API call to Imgur API
     return this.http.get('api/hot/viral/day/0');
   }
