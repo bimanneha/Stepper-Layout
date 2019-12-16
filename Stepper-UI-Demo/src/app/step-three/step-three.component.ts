@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../../services/form.service';
 
@@ -10,6 +10,9 @@ import { FormService } from '../../services/form.service';
 export class StepThreeComponent implements OnInit {
 
   step3: FormGroup;
+
+  @Input()
+  encryptedPaymentData: any;
 
   constructor(private _formBuilder: FormBuilder,
               private formService: FormService) {

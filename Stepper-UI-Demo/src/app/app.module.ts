@@ -17,6 +17,7 @@ import { StepFourComponent } from './step-four/step-four.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatIconModule,
     MatButtonModule,
     MatNativeDateModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [FormService],

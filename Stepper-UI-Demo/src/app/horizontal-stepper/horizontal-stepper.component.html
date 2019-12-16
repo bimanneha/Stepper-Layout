@@ -6,17 +6,17 @@
 
   <mat-step>
     <ng-template matStepLabel>Address</ng-template>
-    <app-step-one></app-step-one>
+    <app-step-one [encryptedPaymentData]="encryptedPaymentData"></app-step-one>
   </mat-step>
 
   <mat-step>
     <ng-template matStepLabel>Payment</ng-template>
-    <app-step-two></app-step-two>
+    <app-step-two [encryptedPaymentData]="encryptedPaymentData" (dataReceived)="shareData($event)"></app-step-two>
   </mat-step>
 
   <mat-step>
     <ng-template matStepLabel>Review</ng-template>
-    <app-step-three></app-step-three>
+    <app-step-three [encryptedPaymentData]="encryptedPaymentData"></app-step-three>
   </mat-step>
 
   <mat-step>

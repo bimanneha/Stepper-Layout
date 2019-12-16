@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormService } from '../../services/form.service';
 
@@ -10,6 +10,9 @@ import { FormService } from '../../services/form.service';
 export class StepOneComponent {
 
   step1: FormGroup;
+
+  @Input()
+  encryptedPaymentData: any;
 
   constructor(private _formBuilder: FormBuilder, private formService: FormService) {
 

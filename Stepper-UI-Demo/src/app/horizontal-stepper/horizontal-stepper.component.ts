@@ -10,9 +10,15 @@ export class HorizontalStepperComponent implements OnInit {
 
   isLinear = true;
 
+  encryptedPaymentData: any;
+
   constructor(private formService: FormService) { }
 
   ngOnInit() {
+  }
+
+  shareData(evt) {
+    this.encryptedPaymentData = evt;
   }
 
 }
