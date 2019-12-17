@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { FormService } from '../../services/form.service';
 
@@ -14,6 +14,9 @@ export class StepOneComponent {
   @Input()
   encryptedPaymentData: any;
 
+  @Output()
+  stepperStatusChange = new EventEmitter();
+
   constructor(private _formBuilder: FormBuilder, private formService: FormService) {
 
     this.step1 = this._formBuilder.group({
@@ -27,6 +30,11 @@ export class StepOneComponent {
 
   change(cityName){
     this.step1.patchValue({ cityName: cityName});
+  }
+
+  changeStatus() {
+    const addressComplete = (this.step1.valid);
+    this.stepperStatusChange.emit({'address': addressComplete});
   }
 
 }

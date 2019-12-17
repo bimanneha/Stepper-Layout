@@ -19,11 +19,11 @@
   <div>
     <button class="button-spacing" mat-stroked-button matStepperNext disabled>Back</button>
 
-    <button mat-raised-button matStepperNext color="primary">Next</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="changeStatus()">Next</button>
 
     <br><br>
 
-    encryptedPaymentData : {{encryptedPaymentData | json}}
+<!--    encryptedPaymentData : {{encryptedPaymentData | json}}-->
 
     <br><br>
 

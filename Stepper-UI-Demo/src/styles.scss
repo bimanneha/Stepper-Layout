@@ -1,0 +1,39 @@
+
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+@import './custom-stepper-theme';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+  margin:100px;
+}
+
+.button-spacing {
+  margin-right: 10px !important;
+}
+
+.mat-step-icon {
+  height: 40px !important;
+  width: 40px !important;
+  border: 1px solid dimgrey !important;
+}
+
+.basic-container .mat-step-header .mat-step-icon-selected {
+  background-color: #002d72;
+  color: white;
+}
+
+
+.mat-step-header .mat-step-icon {
+  background-color: white;
+  color: dimgrey;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}

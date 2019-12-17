@@ -1,37 +1,33 @@
 <mat-horizontal-stepper labelPosition="bottom" [linear]="isLinear" #stepper>
 
-  <ng-template matStepperIcon="edit">
-    <mat-icon>check</mat-icon>
+  <ng-template matStepperIcon="edit" let-index="index">
+    {{index +1}}
   </ng-template>
 
-  <mat-step>
-    <ng-template matStepLabel>Address</ng-template>
-    <app-step-one [encryptedPaymentData]="encryptedPaymentData"></app-step-one>
+  <ng-template matStepperIcon="form">
+    <mat-icon>format_align_center</mat-icon>
+  </ng-template>
+
+  <ng-template matStepperIcon="last">
+    <mat-icon>done_all</mat-icon>
+  </ng-template>
+
+  stepperStatus.address : {{stepperStatus.address | json}}
+  <mat-step label="Address" [completed]="stepperStatus.address">
+    <app-step-one [encryptedPaymentData]="encryptedPaymentData" (stepperStatusChange)="stepperStatusChange($event)"></app-step-one>
   </mat-step>
 
-  <mat-step>
-    <ng-template matStepLabel>Payment</ng-template>
+  <mat-step label="Payment">
     <app-step-two [encryptedPaymentData]="encryptedPaymentData" (dataReceived)="shareData($event)"></app-step-two>
   </mat-step>
 
-  <mat-step>
-    <ng-template matStepLabel>Review</ng-template>
+  <mat-step label="Review">
     <app-step-three [encryptedPaymentData]="encryptedPaymentData"></app-step-three>
   </mat-step>
 
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
+  <mat-step label="Done">
     <app-step-four></app-step-four>
   </mat-step>
-
-  <!--<mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>-->
 
 </mat-horizontal-stepper>
 
